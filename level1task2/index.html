@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio_Website</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu&display=swap" rel="stylesheet">
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+:root{
+    --bg-color:#0e0d0d;
+    --second-bg-color:#0f0f0f;
+    --text-color:#fff;
+    --second-color:#ccc;
+    --main-color:#be261bef;
+    --big-font:3rem;
+    --h2-font:2rem;
+    --p-font:1.1rem;
+}
+body{
+    background-color: var(--bg-color);
+    color:var(--text-color);
+}
+header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    right:0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 22px 15%;
+    border-bottom: 1px solid transparent;
+    transition: all .45s ease;
+}
+
+.navlist a:hover{
+    color: var(--main-color);
+}
+.navlist a.active{
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 25px;
+    display: none;
+}
+section{
+    padding: 160px 15% 120px;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/img1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.slide{
+    margin-bottom: 20px;
+}
+.one{
+    display: inline-block;
+    margin-right: 15px;
+    height: 32px;
+    padding: 0 15px;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: var(--main-color);
+    color: var(--text-color);
+}
+.two{
+    display: inline-block;
+    color: var(--second-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+.home-text h1{
+    font-size: var(--big-font);
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.1;
+    margin: 0 0 8px;
+}
+.home-text h3{
+    color: var(--text-color);
+    margin: 0 0 35px;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+
+}
+.home-text p{
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    border-radius: 5px;
+    color:var(--text-color);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all .45 ease;
+}
+.btn:hover{
+    transform: scale(0.9);
+}
+header .sticky{
+    background: var(--bg-color);
+    border-bottom: 1px solid #ffffff1a;
+    padding: 12px 15%;
+}
+.about{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+.about-img img{
+    max-width: 530px;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: -8px -8px 15px rgb(28, 28, 29), 5px 5px 15px rgb(30, 30, 31);
+}
+.about-text h2{
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+.about-text h4{
+    font-size: 24px;
+    font-weight: 650;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+.about-text p{
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 4rem;
+}
+.services{
+    background: var(--second-bg-color);
+}
+.main-text{
+    text-align: center;
+}
+.main-text h2{
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+.services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+.box{
+    background: var(--bg-color);
+    padding: 35px 45px;
+    border-radius: 8px;
+    transition: all .45 ease;
+}
+.s-icons i{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.box h3{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+.box p{
+    color: var(--second-color);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+.read{
+    display: inline-block;
+    padding: 8px 18px;
+    background: #333333;
+    color: var(--second-color);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all .45 ease;
+}
+.read:hover{
+    letter-spacing: 1px;
+    background: #64606099;
+    color: var(--text-color);
+}
+.box:hover{
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,auto));
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+.row{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.row img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+    box-shadow: -8px -8px 15px rgba(58, 58, 61, 0.2), 5px 5px 15px rgba(36, 36, 37, 0.1);
+}
+.layer{
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(rgba(0,0,0,0.1), #ad1d1d);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+.layer h5{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.layer p{
+    color: var(--second-color);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.layer i{
+    color: var(--main-color);
+    margin-top: 20px;
+    font-size: 20px;
+    background: var(--text-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.row:hover img{
+    transform: scale(1.1);
+}
+.row:hover .layer{
+    height: 100%;
+}
+.contact{
+    background: var(--second-bg-color);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.contact-text h4{
+    color: var(--text-color);
+    margin: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.contact-text h2{
+    color: var(--h2-font);
+    line-height: 1;
+}
+.contact-text p{
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+.list{
+    margin-bottom: 2.8rem;
+}
+.list li{
+    margin-bottom: 12px;
+}
+.list li a{
+    display: block;
+    color: var(--second-color);
+    font-size: 14px;
+    transition: all .45 ease;
+}
+.list li a:hover{
+    color: var(--text-color);
+    transform: translateX(5px);
+}
+.contact-icons i{
+    height: 45px;
+    width: 45px;
+    background: var(--main-color);
+    color: var(--text-color);
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    display: inline-flex;
+    border-radius: 8px;
+    margin-right: 15px;
+    transition: all .45 ease;
+}
+.contact-icons i:hover{
+    background: var(--text-color);
+    color: var(--main-color);
+}
+.contact-form form{
+    position: relative;
+}
+.contact-form form input, form textarea{
+    width: 100%;
+    padding: 14px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.contact-form textarea{
+    resize: none;
+    height: 240px;
+}
+.contact-form .submit{
+    display: inline-block;
+    font-size: 16px;
+    background: var(--main-color);
+    color: var(--text-color);
+    width: 160px;
+    transition: all .45 ease;
+}
+.contact-form .submit:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.text-footer{
+    text-align: center;
+    padding: 20px 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background: var(--bg-color);
+    color: var(--second-color);
+    font-size: 20px;
+}
+.logo{
+    color: var(--text-color);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+span{
+    color:var(--main-color);
+}
+.navlist{
+    display: flex;
+}
+.navlist a{
+    color: var(--second-color);
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 25px;
+    transition: all .45s ease;
+}
+</style>
+</head>
+<body>
+    
+    <header class="sticky">
+        <a href="#" class="logo">My <span>&nbsp</span>Portfolio <i class="fa fa-anchor" aria-hidden="true"></i></a>
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <!--home section design-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <din class="slide">
+                <span class="one">Hello</span>
+                <span class="two">I'm</span>
+            </din>
+            <h1>Sara</h1>
+            <h3>Software <span>engineer.</span></h3>
+            <p>A passionate Web developer having an experience of building web <br>applications with Javascript and I have following skills:<br><i class='bx bxs-chevron-right'></i>HTML5<br><i class='bx bxs-chevron-right'></i>CSS3<br><i class='bx bxs-chevron-right'></i>JavaScript<br><i class='bx bxs-chevron-right'></i>MySQL</p>
+            <div class="button">
+                <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn">Download resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!--about-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="img.jpg">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>Creative Web Developer!</h3>
+            <p>I am Sara Arshad and an energetic, hard working and passionate individual who focuses on the quality of tasks. I am a 5th year Software Engineering student in University of Central Punjab. 
+                Throughout my studies, I have been introduced to the fundamentals of web development, including HTML, CSS, PHP and JavaScript. I have completed various projects that have allowed me to have particular experience on real world.</p>
+            <a href="#" class="btn">More About</a>
+        </div>
+    </section>
+
+    <!--services-->
+    <section class="services" id="services">
+        <div class="main-text">
+            <h2><span>My </span>Services</h2>
+        </div>
+        <div class="services-content">
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx-edit-alt'></i>
+                </div>
+                <h3>Creative Design</h3>
+                <p>A professional's area of specialty  such as solving problem, analysis, 
+                    might be used to categorize as activities. Refers to the task 
+                    associated with creating, testing, building and maintaining websites.</p>
+                <a href="#" class="read">Read More</a>
+            </div>
+
+            <div class="box">
+                <div class="s-icons">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>A professional's area of specialty  such as solving problem, analysis, 
+                    might be used to categorize as activities. Refers to the task 
+                    associated with creating, testing, building and maintaining websites.</p>
+                <a href="#" class="read">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!--my portfolio-->
+    <section class="portfolio" id="portfolio">
+        <div class="main-text">
+            <h2><span>Latest </span>Projects</h2>
+        </div>
+        <div class="portfolio-content">
+            <div class="row">
+                <video src="port1.JPG">
+                <div class="layer">
+                    <h5>Visual Design</h5>
+                    <p>Make this responsive design by using HTML, CSS and Js. An interactive interface with buttons for performing functions.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <video src="port2.png">
+                <div class="layer">
+                    <h5>Visual Design</h5>
+                    <p>Make this responsive design using HTML and CSS languages. User can explore the website on the social media handles.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="port3.JPG">
+                <div class="layer">
+                    <h5>Visual Design</h5>
+                    <p>Make this responsive design by using HTML, databse, php and CSS. User can sign up.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="port4.JPG">
+                <div class="layer">
+                    <h5>Visual Design</h5>
+                    <p>Make this responsive design by using html and css with database.  Tthis page allow customer to select from menu and add in cart.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="port5.JPG">
+                <div class="layer">
+                    <h5>Visual Design</h5>
+                    <p>Make this design by using HTML and CSS. Informing customer about the company that it is coffee shop.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me &#9742</span></h2>
+            <h4>If You Have Any Query In Your Mind.</h4>
+            <div class="list">
+                <li><a href="tel:123-456-7890">03334455667</a></li>
+                <li><a href="mailto:your@email.com">seirraarshad@gmail.com</a></li>
+            </div>
+            <div class="contact-icons">
+                <a href="https://Facebook.com"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.linkedin.com/in/syeda-ariba-batool"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://Instagram.com"><i class='bx bxl-instagram-alt' ></i></a>
+                <a href="https://Twitter.com"><i class='bx bxl-twitter' ></i></a>
+                <a href="https://github.com/syedaaribabatool"><i class='bx bxl-github' ></i></a>
+            </div>
+        </div>
+            <div class="contact-form">
+                <form action="">
+                    <input type="name" placeholder="Enter your Name" required>
+                    <input type="email" placeholder="Enter your Email-Address" required>
+                    <input type="number" placeholder="Enter your Mobile Number" required>
+                    <textarea name="" id="" cols="35" rows="10" placeholder="Enter your Query Here." required></textarea>
+                    <input type="submit" value="Send" class="submit" required>
+                </form>
+            </div>
+    </section>
+
+
+</body>
+</html>
